@@ -7,11 +7,5 @@ terraform {
   }
 }
 
-variable "pvt_key" {}
-
 provider "digitalocean" {
-}
-
-data "digitalocean_ssh_key" "terraform" {
-  name = "terraform"
 }
