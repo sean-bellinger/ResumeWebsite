@@ -2,7 +2,7 @@ export default function Navbar() {
     return <nav className="nav">
         <ul>
             <li>
-                <a href="/home">Home</a>
+                <a href="/">Home</a>
             </li>
             <li>
                 <a href="/aboutMe">About Me</a>
