@@ -2,7 +2,7 @@ export default function Home() {
     return <div>
         <a class="social-container" href="https://www.linkedin.com/in/sean-bellinger/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
         <a class="social-container" href="https://github.com/sean-bellinger?tab=repositories" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-        <div>
+        <div class="contact-info">
             Email: sean.eric.bellinger@gmail.com <br></br>
             Phone: 564.203.8727 <br></br>
             Location: Vancouver, Washington

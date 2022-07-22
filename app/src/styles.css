@@ -1,0 +1,14 @@
+.social-container {
+    padding: 3px;
+    display:inline-block;
+    color: rgb(67, 64, 231);
+    height: 30px;
+    width: 30px;
+}
+ion-icon {
+    font-size: 32px;
+  }
+.contact-info {
+    padding: 10px;
+    padding-left: 0px;
+}
