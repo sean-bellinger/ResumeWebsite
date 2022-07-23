@@ -4,11 +4,10 @@ resource "digitalocean_droplet" "website-portfolio" {
     region = data.digitalocean_region.primary.slug
     size = "s-1vcpu-512mb-10gb"
     ssh_keys = [
-      digitalocean_ssh_key.default.fingerprint
+      data.digitalocean_ssh_key.linux_laptop.fingerprint
     ]
 }
 
-resource "digitalocean_ssh_key" "default" {
-  name       = "website-portfolio"
-  public_key = file("/home/sean/.ssh/id_ed25519.pub")
+data "digitalocean_ssh_key" "linux_laptop" {
+  name = "Linux-Laptop"
 }
