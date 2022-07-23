@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "website-portfolio" {
-    image = "ubuntu-20-04-x64"
+    image = "ubuntu-22-04-x64"
     name = "website-portfolio"
     region = data.digitalocean_region.primary.slug
     size = "s-1vcpu-512mb-10gb"

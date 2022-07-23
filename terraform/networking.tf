@@ -12,6 +12,7 @@ data "digitalocean_region" "primary" {
 
 resource "digitalocean_reserved_ip" "example" {
   region = data.digitalocean_region.primary.slug
+  droplet_id = digitalocean_droplet.website-portfolio.id
 }
 
 resource "digitalocean_domain" "default" {
