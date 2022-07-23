@@ -5,12 +5,13 @@ locals {
   ])
 }
 
-data "digitalocean_region" "sfo2" {
-  slug = "sfo2"
+
+data "digitalocean_region" "primary" {
+  slug = "sfo3"
 }
 
 resource "digitalocean_reserved_ip" "example" {
-  region = data.digitalocean_region.sfo2.slug
+  region = data.digitalocean_region.primary.slug
 }
 
 resource "digitalocean_domain" "default" {
