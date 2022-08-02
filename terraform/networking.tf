@@ -28,3 +28,33 @@ resource "digitalocean_record" "main" {
   name   = each.value
   value  = digitalocean_reserved_ip.example.ip_address
 }
+
+resource "digitalocean_firewall" "web" {
+  name = "only-22-80-and-443"
+
+  droplet_ids = [digitalocean_droplet.website-portfolio.id]
+
+  //this is our ssh rule
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "22"
+    source_addresses = ["73.25.84.23"]
+  }
+  //http
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "80"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+  //https
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+  //ping
+  inbound_rule {
+    protocol         = "icmp"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+}
